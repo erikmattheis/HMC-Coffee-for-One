@@ -1,0 +1,94 @@
+<template>
+  <div>
+    <div>
+      <h2>About the Project</h2>
+
+      <section>
+        <p>March 2020, as many of us experienced stay-at-home orders being imposed in the US, I was visiting my parents out of town.</p>
+
+        <p>As the pandemic unfolded before our eyes on national, international and local news, it was truly a comfort to be isolated with my family and not stuck home completely alone.</p>
+
+        <img
+          src="/img/coffee.png"
+          alt="Latte"
+          style="margin-left: 30px; margin-bottom: 20px; max-width: 37%"
+        />
+
+        <p>As months progressed, I started working remotely but that was short-lived as my company put us all on furlough...nice to get the extra unemployment and an extension of medical coverage but still so many unknown unknowns.</p>
+
+        <p>Then, a limited call back. Working for a retail store considered essential industry selling beds and office furniture, a small group of employees were asked to return to work. I did.</p>
+
+        <p>Returning home to a cold empty apartment, I made my morning coffee and suddenly felt very, very alone. I snapped my mug and sent it to my friend to at least share a cup and an Hello. Thus was born...Coffee for One.</p>
+
+        <p>I continued this morning ritual through returning to work and the following months until May 14, 2021 when the mask mandate was removed in Minnesota.</p>
+
+        <p>These photos are my daily snaps and a few of the messages received back.</p>
+
+        <p>Once I could join my friends and family again for coffee, I captured some of those photos as well.</p>
+      </section>
+    </div>
+    <nav>
+      <ul class="menu bottom">
+        <li>
+          <a href="#!"
+            ><img
+              src="/img/clean-water-logo.png"
+              style="height: 280"
+          /></a>
+        </li>
+        <li>
+          <a href="#!"
+            ><img
+              src="/img/msab-logo.png"
+              style="height: 280"
+          /></a>
+        </li>
+        <li>
+          <p>Heather M. Cole is a fiscal year 2022 recipient of a Creative Support for Individuals grant from the Minnesota State Arts Board. This activity is made possible by the voters of Minnesota through a grant from the Minnesota State Arts Board, thanks to a legislative appropriation from the arts and cultural heritage fund.</p>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</template>
+
+<style scoped>
+  section {
+    margin: 0 auto 120px;
+
+}
+
+img {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  max-width: 50%;
+}
+
+p {
+  text-align: justify;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu li {
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.menu li img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.menu li p {
+  text-align: justify;
+}
+</style>
