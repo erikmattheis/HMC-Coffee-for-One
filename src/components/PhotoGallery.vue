@@ -102,6 +102,9 @@
     max-width: 100%;
     max-height: 100%;
   }
+  .thumb:hover {
+    cursor: pointer;
+  }
 
   .card .overlay {
     position: absolute;
@@ -127,14 +130,12 @@
   .card .overlay .title {
     font-size: 18px;
     font-weight: bold;
-    color: white;
     margin-bottom: 10px;
     padding: 5px;
   }
 
   .card .overlay .caption {
     font-size: 14px;
-    color: white;
     padding: 5px;
   }
 </style>

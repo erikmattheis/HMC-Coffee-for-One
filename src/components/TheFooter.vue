@@ -44,8 +44,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: #f5f5f5;
     font-size: 0.8rem;
   }
 
@@ -70,11 +69,11 @@
 
   a {
     font-weight: 500;
-    color: #adb0e5;
+    color: #8388e7;
     text-decoration: inherit;
   }
 
   a:hover {
-    color: #c2c4e6;
+    color: #9fa3e7;
   }
 </style>

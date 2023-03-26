@@ -1,54 +1,110 @@
 <template>
   <nav>
-    <h1><router-link to="/">Coffee for One</router-link></h1>
-    <ul class="menu">
-      <li>
-        <h2><router-link to="/project">Project</router-link></h2>
-      </li>
-      <li>
-        <h2><router-link to="/artist">Artist</router-link></h2>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="left">
+        <h1><router-link to="/">Coffee for One</router-link></h1>
+      </div>
+      <div class="right">
+        <ul class="menu">
+          <li>
+            <h2><router-link to="/project">Project</router-link></h2>
+          </li>
+          <li>
+            <h2><router-link to="/artist">Artist</router-link></h2>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </template>
 
 <style scoped>
-  .menu {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 920px;
+    margin: 20px auto 0 auto;
+  }
+
+  .left {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 720px;
-    margin: 20px auto 0 auto;
+    height: 100%;
+  }
+
+  .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+  }
+
+  .menu {
     list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 
   .menu li {
-    width: 125px;
-    height: 50px;
-    transition: background-position-x 0.9s linear;
+    height: 50%;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 42px;
+    margin: 0;
     text-align: center;
   }
 
-  h1 a,
-  .menu li a {
-    color: #100;
-    text-decoration: none;
-    transition: all 0.45s;
-  }
-
   h1 a {
-    font-size: 42px;
-  }
-  li h2 a {
-    font-size: 32px;
-  }
-
-  h1 a:hover,
-  li h2 a:hover {
-    color: #666;
+    background-color: #441111;
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 0 30px;
+    transition: background-color 0.45s, color 0.45s;
   }
 
-  .menu li:not(:last-child) {
-    margin-right: 30px;
+  .right h2 {
+    margin: 0;
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .right h2 a {
+    color: #441111;
+    text-decoration: none;
+    transition: background-color 0.45s, color 0.45s;
+  }
+
+  .right h2:first-child a {
+    margin-top: 0;
+  }
+
+  .right h2:last-child a {
+    margin-bottom: 0;
+  }
+
+  .left a:hover {
+    background-color: #f5f5f5;
+    color: #441111;
+    cursor: pointer;
+  }
+
+  .right li:hover {
+    background-color: #5e3333;
+    cursor: pointer;
+  }
+
+  .right li:hover a {
+    color: #f5f5f5;
   }
 </style>

@@ -33,7 +33,7 @@
       <div class="image-container">
         <img
           class="lightbox-image"
-          :src="`/gallery/${image.name}`"
+          :src="`/gallery/full/${image.name}`"
           :alt="image.title"
         />
       </div>

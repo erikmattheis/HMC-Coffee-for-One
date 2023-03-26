@@ -1,6 +1,5 @@
 <script>
   import VueFeather from "vue-feather";
-
   import PhotoGallery from "./components/PhotoGallery.vue";
   import ArtistPage from "./components/ArtistPage.vue";
   import ProjectPage from "./components/ProjectPage.vue";
@@ -42,12 +41,13 @@
 
 <style>
   @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+  @import url("https://fonts.googleapis.com/css?family=Poppins:700&display=swap");
+  
 
   :root {
     font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
     color-scheme: light dark;
 
     font-synthesis: none;
@@ -81,7 +81,7 @@
 
   h1 {
     font-size: 3.2em;
-    line-height: 1.1;
+    line-height: 1.5;
   }
 
   p {
@@ -105,21 +105,19 @@
 
   body,
   html {
-    color: #331111;
+    color: #441111;
     background-color: #f5f5f5;
   }
 
-  h2 {
-    font-size: 1.6em;
+  .page-title {
+    display: inline-block;
+    font-size: 42px;
+    padding: 10px 20px;
+    margin-top: 20px;
   }
 
   ul {
     list-style: none;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 0.5em;
   }
 
   .sr {

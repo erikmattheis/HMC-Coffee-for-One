@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>About Heather</h2>
+    <h2 class="page-title">About Heather</h2>
 
     <section>
       <p>My work revolves around reuse of materials- often plastic consumer commercial packaging. These items can be very intriguing and even beautiful…and often a mastery of engineering. Frequently, the packaging left behind is often more interesting and costly than the object it originally contained. Also costly in the sense that, for the most part, it is unnecessary and has contributed to an impending environmental reckoning.</p>
@@ -20,6 +20,8 @@
 </template>
 
 <style scoped>
+
+
   section {
   margin: 0 auto 120px;
 }

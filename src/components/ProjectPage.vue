@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h2>About the Project</h2>
+      <h2 class="page-title">About the Project</h2>
 
       <section>
         <p>March 2020, as many of us experienced stay-at-home orders being imposed in the US, I was visiting my parents out of town.</p>
