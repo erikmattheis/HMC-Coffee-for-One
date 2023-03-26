@@ -32,7 +32,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .right {
@@ -51,7 +50,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
 }
 
 .menu li {
@@ -60,7 +58,7 @@
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 55px;
   margin: 0;
   text-align: center;
   display: inline-block;
@@ -106,7 +104,7 @@ nav {
 }
 
 .right li:hover {
-  background-color: #5e3333;
+  background-color: #441111;
   cursor: pointer;
 }
 

@@ -79,28 +79,17 @@ body {
   flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.5;
-}
-
 p {
   font-size: 1.2em;
   line-height: 1.5;
   margin: 20px;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
+* {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-  letter-spacing: 1.1px;
+
 }
 
 body,
