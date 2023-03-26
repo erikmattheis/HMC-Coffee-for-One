@@ -1,28 +1,28 @@
 <script>
-  import VueFeather from "vue-feather";
-  import PhotoGallery from "./components/PhotoGallery.vue";
-  import ArtistPage from "./components/ArtistPage.vue";
-  import ProjectPage from "./components/ProjectPage.vue";
-  import TheNavigation from "./components/TheNavigation.vue";
-  import TheFooter from "./components/TheFooter.vue";
+import VueFeather from "vue-feather";
+import PhotoGallery from "./components/PhotoGallery.vue";
+import ArtistPage from "./components/ArtistPage.vue";
+import ProjectPage from "./components/ProjectPage.vue";
+import TheNavigation from "./components/TheNavigation.vue";
+import TheFooter from "./components/TheFooter.vue";
 
-  export default {
-    name: "App",
-    components: {
-      PhotoGallery,
-      ArtistPage,
-      ProjectPage,
-      VueFeather,
-      TheNavigation,
-      TheFooter,
-    },
-    data() {
-      return {
-        mode: 0,
-      };
-    },
-    methods: {},
-  };
+export default {
+  name: "App",
+  components: {
+    PhotoGallery,
+    ArtistPage,
+    ProjectPage,
+    VueFeather,
+    TheNavigation,
+    TheFooter,
+  },
+  data() {
+    return {
+      mode: 0,
+    };
+  },
+  methods: {},
+};
 </script>
 
 <template>
@@ -40,98 +40,102 @@
 </template>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
-  @import url("https://fonts.googleapis.com/css?family=Poppins:700&display=swap");
-  
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:700&display=swap");
 
-  :root {
-    font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    color-scheme: light dark;
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-  }
+:root {
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
 
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
 
-  main {
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-    max-width: 1100px;
-  }
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+main {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  max-width: 1100px;
+}
 
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.5;
-  }
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin: 20px;
-  }
+h1 {
+  font-size: 3.2em;
+  line-height: 1.5;
+}
 
-  html {
-    box-sizing: border-box;
-  }
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 20px;
+}
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-    padding: 0;
-    margin: 0;
-    letter-spacing: 1.1px;
-  }
+html {
+  box-sizing: border-box;
+}
 
-  body,
-  html {
-    color: #441111;
-    background-color: #f5f5f5;
-  }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1.1px;
+}
 
-  .page-title {
-    display: inline-block;
-    font-size: 42px;
-    padding: 10px 20px;
-    margin-top: 20px;
-  }
+body,
+html {
+  color: #441111;
+  background-color: #f5f5f5;
+}
 
-  ul {
-    list-style: none;
-  }
+.page-title {
+  display: inline-block;
+  font-size: 42px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
 
-  .sr {
-    display: inline-block;
-    line-height: 0.5rem;
-    text-indent: -10000px;
-  }
+ul {
+  list-style: none;
+}
 
-  .fade-enter {
-    opacity: 0 !important;
-  }
+section {
+  margin: 0 auto 120px;
+}
 
-  .fade-enter-active {
-    opacity: 1 !important;
-    transition: opacity 0.5s ease-in-out !important;
-  }
+.sr {
+  display: inline-block;
+  line-height: 0.5rem;
+  text-indent: -10000px;
+}
+
+.fade-enter {
+  opacity: 0 !important;
+}
+
+.fade-enter-active {
+  opacity: 1 !important;
+  transition: opacity 0.5s ease-in-out !important;
+}
 </style>
