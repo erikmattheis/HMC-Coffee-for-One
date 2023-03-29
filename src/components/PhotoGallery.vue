@@ -9,6 +9,12 @@ export default {
   components: {
     LightBox,
   },
+  props: {
+    name: {
+      type: String,
+      default: "",
+    },
+  },
   data() {
     return {
       mode: 0,
@@ -19,6 +25,19 @@ export default {
       imagesPerPage: 20,
       mousearea: [],
     };
+  },
+  mounted() {
+    this.lightbox = null;
+    if (this.name) {
+      const image = this.images.find(img => img.name === this.name);
+      if (image) {
+        this.lightbox = {
+          path: `./gallery/${image.name}`,
+          title: image.title,
+          description: image.description,
+        };
+      }
+    }
   },
   directives: {
     infiniteScroll,

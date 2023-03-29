@@ -11,6 +11,12 @@ const router = createRouter({
       name: "photoGallery",
       path: "/",
       component: photoGallery,
+      children: [{
+        name: "onePhoto",
+        path: "/photo/:name",
+        component: photoGallery,
+      },
+    ],
     },
     {
       name: "artistPage",
