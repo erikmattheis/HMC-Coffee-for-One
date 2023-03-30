@@ -6,8 +6,8 @@
       <p>My work revolves around reuse of materials- often plastic consumer commercial packaging. These items can be very intriguing and even beautiful…and often a mastery of engineering. Frequently, the packaging left behind is often more interesting and costly than the object it originally contained. Also costly in the sense that, for the most part, it is unnecessary and has contributed to an impending environmental reckoning.</p>
 
       <img
+        alt="HMC example sculpture"
         src="/img/art-column.jpg"
-        alt="Work of Art"
         class="art-column"
       />
 
@@ -23,15 +23,22 @@
     <section>
       <h3>Other Work</h3>
       <div class="artist-card">
-        <img SRC="https://baconmockup.com/240/240/" />
+        <img class="hmc-example" alt="HMC example work" src="/img/hmc-1.jpg" />
       </div>
       <div class="artist-card">
-        <img SRC="https://baconmockup.com/240/240/" />
+        <img class="hmc-example" alt="HMC example work" src="/img/hmc-2.jpg" />
       </div>
       <div class="artist-card">
-        <img SRC="https://baconmockup.com/240/240/" />
+        <img class="hmc-example" alt="HMC example work" src="/img/hmc-3.jpg" />
+      </div>
+      <div class="artist-card">
+        <img class="hmc-example" alt="HMC example work" src="/img/hmc-4.jpg" />
+      </div>
+      <div class="artist-card">
+        <img class="hmc-example" alt="HMC example work" src="/img/hmc-5.jpg" />
       </div>
     </section>
+
   </div>
 </template>
 
@@ -64,8 +71,13 @@ ul li {
 }
 
 .artist-card {
-  width: 240px;
+  width: 180px;
   margin: 10px;
   display: inline-block;
+}
+
+.hmc-example {
+  max-width: 180px;
+  max-height: 180px;
 }
 </style>

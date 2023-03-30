@@ -33,12 +33,14 @@
       <ul>
         <li>
           <img
+            alt="Clean Water Fund Logo"
             src="/img/clean-water-logo.png"
             style="height: 180"
           />
         </li>
         <li>
           <img
+            alt="Minnesota State Arts Board Logo"
             src="/img/msab-logo.png"
             style="height: 180"
           />

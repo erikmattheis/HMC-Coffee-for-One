@@ -90,6 +90,7 @@ export default {
         @blur="updateImage(image)"
       />
       <img
+        :alt="image.title"
         :src="`/gallery/thumbs/${image.name}`"
         class="thumb"
       />

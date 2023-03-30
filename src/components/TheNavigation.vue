@@ -1,114 +1,125 @@
 <template>
-  <nav>
-    <div class="container">
-      <div class="left">
-        <h1><router-link to="/">Coffee&nbsp;for&nbsp;One</router-link></h1>
-      </div>
-      <div class="right">
-        <ul class="menu">
-          <li>
-            <h2><router-link to="/project">Project</router-link></h2>
-          </li>
-          <li>
-            <h2><router-link to="/artist">Artist</router-link></h2>
-          </li>
-        </ul>
+  <div class="wrapper">
+    <div class="nav-box-wrapper">
+      <div class="nav-box">
+        <router-link class="nav-link" to="/">
+          <h1>Coffee&nbsp;for&nbsp;One</h1>
+        </router-link>
       </div>
     </div>
-  </nav>
+    <div class="right-box-wrapper">
+      <div class="right-box">
+        <router-link class="right-link" to="/project">
+          <h2>Project</h2>
+        </router-link>
+      </div>
+      <div class="right-box">
+        <router-link class="right-link" to="/artist">
+          <h2>Artist</h2>
+        </router-link>
+      </div>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  max-width: 920px;
-  margin: 20px auto 0 auto;
-}
+<script>
+export default {
+  name: 'Navigation',
+  data() {
+    return {
+      linkText: 'Home',
+      topText: 'Top',
+      bottomText: 'Bottom',
+    };
+  },
+};
+</script>
 
-.left {
-  flex-grow: 1;
+<style>
+.wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
-.right {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 50%;
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #F5F5F5;
 }
 
-.menu {
-  list-style: none;
+.nav-box {
+  display: inline-block;
+  padding: 1em 2em;
+  background-color: #441111;
+  color: #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.nav-box:hover {
+  background-color: #f5f5f5;
+  color: #441111;
+  cursor: pointer
+}
+
+.nav-box:hover a h1 {
+  color: #441111;
+}
+
+.nav-box h1 {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  text-transform: uppercase;
 }
 
-.menu li {
+.nav-box-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.right-box-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-box {
+  padding: 0.5em 1em;
   height: 50%;
+  background-color: #f5f5f5;
+  text-transform: uppercase;
+}
+
+.right-link {
+  display: block;
+  text-decoration: none;
+  color: #441111;
+}
+
+.right-box:hover {
+  background-color: #441111;
+  cursor: pointer
+}
+
+.right-box:hover a h2 {
+  color: #f5f5f5;
+}
+
+
+.right-box h2 {
+  margin: 0;
+  padding: 0;
   text-align: left;
+}
+
+.right-box h2 {
+  font-size: 2em;
+}
+
+.right-box h2 {
+  font-size: 1.5em;
 }
 
 h1 {
-  font-size: 55px;
-  margin: 0;
-  text-align: center;
-  display: inline-block;
-}
-
-h1 a {
-  background-color: #441111;
-  color: #f5f5f5;
-  text-decoration: none;
-  padding: 0 30px;
-  transition: background-color 0.45s, color 0.45s;
-}
-
-nav {
-  display: inline-block;
-  width: auto;
-}
-
-.right h2 {
-  margin: 0;
-  padding: 0 20px;
-  text-align: left;
-}
-
-.right h2 a {
-  color: #441111;
-  text-decoration: none;
-  transition: background-color 0.45s, color 0.45s;
-}
-
-.right h2:first-child a {
-  margin-top: 0;
-}
-
-.right h2:last-child a {
-  margin-bottom: 0;
-}
-
-.left a:hover {
-  background-color: #f5f5f5;
-  color: #441111;
-  cursor: pointer;
-}
-
-.right li:hover {
-  background-color: #441111;
-  cursor: pointer;
-}
-
-.right li:hover a {
-  color: #f5f5f5;
+  font-size: 3em;
 }
 </style>

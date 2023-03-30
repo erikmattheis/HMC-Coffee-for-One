@@ -3,7 +3,7 @@ import VueFeather from "vue-feather";
 import PhotoGallery from "./components/PhotoGallery.vue";
 import ArtistPage from "./components/ArtistPage.vue";
 import ProjectPage from "./components/ProjectPage.vue";
-import TheNavigation from "./components/TheNavigation2.vue";
+import TheNavigation from "./components/TheNavigation.vue";
 import TheFooter from "./components/TheFooter.vue";
 
 export default {
