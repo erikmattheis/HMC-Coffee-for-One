@@ -3,19 +3,19 @@
     <div class="nav-box-wrapper">
       <div class="nav-box">
         <router-link class="nav-link" to="/">
-          <h1>{{ linkText }}</h1>
+          <h1>Coffee&nbsp;for&nbsp;One</h1>
         </router-link>
       </div>
     </div>
     <div class="right-box-wrapper">
       <div class="right-box">
         <router-link class="right-link" to="/">
-          <h2>{{ topText }}</h2>
+          <h2>Project</h2>
         </router-link>
       </div>
       <div class="right-box">
         <router-link class="right-link" to="/">
-          <h2>{{ bottomText }}</h2>
+          <h2>Artist</h2>
         </router-link>
       </div>
     </div>
@@ -69,6 +69,7 @@ export default {
 .nav-box h1 {
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 
 .nav-box-wrapper {
@@ -79,13 +80,13 @@ export default {
 .right-box-wrapper {
   display: flex;
   flex-direction: column;
-  width: 300px;
 }
 
 .right-box {
   padding: 0.5em 1em;
   height: 50%;
   background-color: #f5f5f5;
+  text-transform: uppercase;
 }
 
 .right-link {
@@ -94,10 +95,20 @@ export default {
   color: #441111;
 }
 
-.right-box h2,
+.right-box:hover {
+  background-color: #441111;
+  cursor: pointer
+}
+
+.right-box:hover a h2 {
+  color: #f5f5f5;
+}
+
+
 .right-box h2 {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 .right-box h2 {

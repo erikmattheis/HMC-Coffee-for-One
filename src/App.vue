@@ -40,10 +40,8 @@ export default {
 </template>
 
 <style>
-/*
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:700&display=swap");
-
 
 :root {
   font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -128,5 +126,4 @@ section {
   opacity: 1 !important;
   transition: opacity 0.5s ease-in-out !important;
 }
-*/
 </style>
