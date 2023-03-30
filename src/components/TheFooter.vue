@@ -14,66 +14,66 @@
       </li>
       <li>/</li>
       <li>
-        <a href="https://www.instagram.com/heathermcole.designhmc"><vue-feather type="instagram" /><span class="sr">Instagram</span></a>
+        <a href="https://www.instagram.com/heathermcole.coffeeforone/"><vue-feather type="instagram" /><span class="sr">Instagram</span></a>
       </li>
     </ul>
   </footer>
 </template>
 
 <script>
-  import VueFeather from "vue-feather";
+import VueFeather from "vue-feather";
 
-  export default {
-    name: "TheFooter",
-    components: {
-      VueFeather,
-    },
-  };
+export default {
+  name: "TheFooter",
+  components: {
+    VueFeather,
+  },
+};
 </script>
 
 <style scoped>
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background-color: #f5f5f5;
-    font-size: 0.8rem;
-  }
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  font-size: 0.8rem;
+}
 
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  li {
-    margin: 0 0.5rem;
-    font-weight: 500;
-  }
+li {
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
 
-  vue-feather {
-    margin-right: 0.5rem;
-  }
+vue-feather {
+  margin-right: 0.5rem;
+}
 
-  a {
-    font-weight: 500;
-    color: #8388e7;
-    text-decoration: inherit;
-  }
+a {
+  font-weight: 500;
+  color: #8388e7;
+  text-decoration: inherit;
+}
 
-  a:hover {
-    color: #9fa3e7;
-  }
+a:hover {
+  color: #9fa3e7;
+}
 </style>
