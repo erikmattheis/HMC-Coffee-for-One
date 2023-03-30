@@ -46,13 +46,13 @@ export default {
   display: inline-block;
   text-decoration: none;
   color: #F5F5F5;
+  transition: color 0.2s ease-in-out;
 }
 
 .nav-box {
   display: inline-block;
   padding: 1em 2em;
   background-color: #441111;
-  color: #f5f5f5;
   transition: all 0.2s ease;
 }
 
@@ -87,12 +87,14 @@ export default {
   height: 50%;
   background-color: #f5f5f5;
   text-transform: uppercase;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .right-link {
   display: block;
   text-decoration: none;
   color: #441111;
+  transition: color 0.2s ease-in-out;
 }
 
 .right-box:hover {

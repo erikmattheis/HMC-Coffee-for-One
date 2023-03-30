@@ -30,10 +30,11 @@ export default {
     <the-navigation />
 
     <router-view v-slot="{ Component }">
-      <transition name="fade">
-        <component :is="Component" />
-      </transition>
+      <transition-group name="fade" appear enter-active-class="fade-enter-active" leave-active-class="fade-leave-active">
+        <component :is="Component" :key="$route.fullPath" />
+      </transition-group>
     </router-view>
+
   </main>
 
   <the-footer />
@@ -119,11 +120,20 @@ section {
 }
 
 .fade-enter {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 .fade-enter-active {
-  opacity: 1 !important;
-  transition: opacity 0.5s ease-in-out !important;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
 }
 </style>
