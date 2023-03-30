@@ -3,7 +3,7 @@ import VueFeather from "vue-feather";
 import PhotoGallery from "./components/PhotoGallery.vue";
 import ArtistPage from "./components/ArtistPage.vue";
 import ProjectPage from "./components/ProjectPage.vue";
-import TheNavigation from "./components/TheNavigation.vue";
+import TheNavigation from "./components/TheNavigation2.vue";
 import TheFooter from "./components/TheFooter.vue";
 
 export default {
@@ -40,6 +40,7 @@ export default {
 </template>
 
 <style>
+/*
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:700&display=swap");
 
@@ -127,4 +128,5 @@ section {
   opacity: 1 !important;
   transition: opacity 0.5s ease-in-out !important;
 }
+*/
 </style>

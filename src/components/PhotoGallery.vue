@@ -80,7 +80,7 @@ export default {
       class="card"
       v-for="(image, index) in images"
       :key="image.path"
-      @click="lightbox = image"
+      @click="$router.push({ name: 'onePhoto', params: { name: image.name } })"
       v-infinite-scroll="loadMoreImages"
     >
       <input
