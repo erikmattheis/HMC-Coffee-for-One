@@ -30,6 +30,9 @@ export default {
     this.mousearea = Array(this.images.length).fill(false);
   },
   methods: {
+    closeLightbox() {
+      this.$router.push({ name: "photoGallery" });
+    },
     async getImages() {
       const response = await axios.get("/gallery/gallery.json");
       return response;
@@ -80,11 +83,11 @@ export default {
         @blur="updateImage(image)"
       />
     </div>
-
+    imgName: {{ imgName }}
     <LightBox
       :images="images"
       :img-name="imgName"
-      @close="imgName = ''"
+      @close="closeLightbox()"
     />
   </section>
 </template>

@@ -1,47 +1,20 @@
 <template>
-  <div
-    class="lightbox"
-v-if="imgName"
-  >
-    <div
-      class="overlay"
-      @click="closeLightbox"
-    ></div>
+  <div class="lightbox" v-if="name">
+    <div class="overlay" @click="closeLightbox"></div>
     <div class="content">
-      <button
-        class="close-button"
-        @click="closeLightbox"
-      >
-        X
-      </button>
-      <div class="nav-buttons">
-        <button
-          class="nav-button lb-prev"
-          :disabled="currentIndex === 0"
-          @click="prevImage"
-        >
-          &#8249;
-        </button>
-        <button
-          class="nav-button lb-next"
-          :disabled="currentIndex === images.length - 1"
-          @click="nextImage"
-        >
-          &#8250;
-        </button>
-      </div>
       <div class="image-container">
-        <img
-          class="lightbox-image"
-          :src="`/gallery/full/${imgName}.jpg`"
-          :alt="image.title"
-        />
+        <button class="close-button" @click="closeLightbox"><vue-feather type="x" /><span class="sr">X</span></button>
+        <button class="nav-button lb-prev" :disabled="currentIndex === 0" @click="prevImage">&#8249;</button>
+        <img class="lightbox-image" :src="`/gallery/full/${name}.jpg`" :alt="image.title" />
+        <button class="nav-button lb-next" :disabled="currentIndex === images.length - 1" @click="nextImage">&#8250;</button>
       </div>
     </div>
   </div>
 </template>
-
+      
 <script>
+import VueFeather from "vue-feather";
+
 export default {
   props: {
     imgName: {
@@ -53,14 +26,15 @@ export default {
       default: () => [],
     },
   },
+  components: {
+    VueFeather,
+  },
   data() {
     return {
       image: this.images.findIndex((img) => img.name === this.imgName),
-      currentIndex: this.images.findIndex((img) => img.name === this.imgName),
+      name: this.imgName,
+      currentIndex: this.images.findIndex((img) => img.name === this.name),
     };
-  },
-  mounted() {
-    console.log('imgName', this.imgName);
   },
   methods: {
     closeLightbox() {
@@ -69,20 +43,23 @@ export default {
     nextImage() {
       if (this.currentIndex < this.images.length - 1) {
         this.currentIndex++;
-        this.$emit("update:image", this.images[this.currentIndex]);
+        this.image = this.images[this.currentIndex];
+        this.name = this.images[this.currentIndex].name;
+        this.$emit("update:image", this.image);
       }
     },
     prevImage() {
       if (this.currentIndex > 0) {
         this.currentIndex--;
-        this.$emit("update:image", this.images[this.currentIndex]);
+        this.image = this.images[this.currentIndex];
+        this.name = this.images[this.currentIndex].name;
+        this.$emit("update:image", this.image);
       }
-    }
+    },
   },
-}
-
+};
 </script>
-
+      
 <style scoped>
 .lightbox {
   position: fixed;
@@ -106,45 +83,41 @@ export default {
 }
 
 .lightbox .content {
-  position: relative;
   display: flex;
-  flex: none;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  height: 100%;
 }
 
 .lightbox .lightbox-image {
   max-height: 85vh;
-  max-width: 85vh;
+  max-width: 85vw;
+  object-fit: contain;
 }
-
-
 
 .image-container {
   position: relative;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
-.nav-buttons {
-  position: fixed;
+.nav-button {
+  position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
   transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .lb-prev {
-  margin-right: auto;
+  left: 0;
 }
 
 .lb-next {
-  margin-left: auto;
+  right: 0;
 }
 
 .close-button {
@@ -156,4 +129,4 @@ export default {
   cursor: pointer;
 }
 </style>
-``
+      
