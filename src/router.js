@@ -14,7 +14,7 @@ const router = createRouter({
     },
     {
       name: "onePhoto",
-      path: "/photo/:name",
+      path: "/photo/:imgName",
       component: photoGallery,
     },
     {

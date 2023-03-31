@@ -1,7 +1,7 @@
 <template>
   <div
     class="lightbox"
-    v-if="image"
+v-if="imgName"
   >
     <div
       class="overlay"
@@ -33,7 +33,7 @@
       <div class="image-container">
         <img
           class="lightbox-image"
-          :src="`/gallery/full/${image.name}`"
+          :src="`/gallery/full/${imgName}.jpg`"
           :alt="image.title"
         />
       </div>
@@ -42,87 +42,93 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      image: {
-        type: Object,
-        default: () => {},
-      },
-      images: {
-        type: Array,
-        default: () => [],
-      },
+export default {
+  props: {
+    imgName: {
+      type: String,
+      default: () => { },
     },
-    data() {
-      return {
-        currentIndex: this.images.findIndex((img) => img === this.image),
-      };
+    images: {
+      type: Array,
+      default: () => [],
     },
-    methods: {
-      closeLightbox() {
-        this.$emit("close");
-      },
-      nextImage() {
-        if (this.currentIndex < this.images.length - 1) {
-          this.currentIndex++;
-          this.$emit("update:image", this.images[this.currentIndex]);
-        }
-      },
-      prevImage() {
-        if (this.currentIndex > 0) {
-          this.currentIndex--;
-          this.$emit("update:image", this.images[this.currentIndex]);
-        }
-      },
+  },
+  data() {
+    return {
+      image: this.images.findIndex((img) => img.name === this.imgName),
+      currentIndex: this.images.findIndex((img) => img.name === this.imgName),
+    };
+  },
+  mounted() {
+    console.log('imgName', this.imgName);
+  },
+  methods: {
+    closeLightbox() {
+      this.$emit("close");
     },
-  };
+    nextImage() {
+      if (this.currentIndex < this.images.length - 1) {
+        this.currentIndex++;
+        this.$emit("update:image", this.images[this.currentIndex]);
+      }
+    },
+    prevImage() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+        this.$emit("update:image", this.images[this.currentIndex]);
+      }
+    }
+  },
+}
+
 </script>
 
 <style scoped>
-  .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
-  .lightbox .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
+.lightbox .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
-  .lightbox .content {
-    position: relative;
-    display: flex;
-    flex: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.lightbox .content {
+  position: relative;
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  .lightbox .lightbox-image {
-    max-height: 85vh;
-    max-width: 85vh;
-  }
+.lightbox .lightbox-image {
+  max-height: 85vh;
+  max-width: 85vh;
+}
 
 
 
-  .image-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .nav-buttons {
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-buttons {
   position: fixed;
   top: 50%;
   left: 0;
@@ -141,13 +147,13 @@
   margin-left: auto;
 }
 
-  .close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-  }
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
 </style>
 ``

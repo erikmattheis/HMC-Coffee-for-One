@@ -9,16 +9,10 @@ export default {
   components: {
     LightBox,
   },
-  props: {
-    name: {
-      type: String,
-      default: "",
-    },
-  },
   data() {
     return {
       mode: 0,
-      lightbox: null,
+      imgName: this.$route.params.imgName,
       images: [],
       imagesToShow: [],
       currentImageCount: 0,
@@ -26,25 +20,12 @@ export default {
       mousearea: [],
     };
   },
-  mounted() {
-    this.lightbox = null;
-    if (this.name) {
-      const image = this.images.find(img => img.name === this.name);
-      if (image) {
-        this.lightbox = {
-          path: `./gallery/${image.name}`,
-          title: image.title,
-          description: image.description,
-        };
-      }
-    }
-  },
   directives: {
     infiniteScroll,
   },
   async mounted() {
+    console.log('imgName', this.imgName)
     const response = await this.getImages();
-
     this.images = response.data.map(this.addGalleryPath);
     this.mousearea = Array(this.images.length).fill(false);
   },
@@ -54,8 +35,7 @@ export default {
       return response;
     },
     addGalleryPath(image) {
-      const path = `./gallery/thumbs/${image.name}`;
-      return { ...image, path, title: image.name, description: image.name + " caption" };
+      return { ...image, title: image.name, description: image.name + " caption", name: image.name.split('.')[0] };
     },
     async updateImage(image) {
       const data = {
@@ -79,8 +59,8 @@ export default {
     <div
       class="card"
       v-for="(image, index) in images"
-      :key="image.path"
-      @click="$router.push({ name: 'onePhoto', params: { name: image.name } })"
+      :key="image.name"
+      @click="$router.push({ name: 'onePhoto', params: { imgName: image.name.split('.')[0] } })"
       v-infinite-scroll="loadMoreImages"
     >
       <input
@@ -91,7 +71,7 @@ export default {
       />
       <img
         :alt="image.title"
-        :src="`/gallery/thumbs/${image.name}`"
+        :src="`/gallery/thumbs/${image.name}.jpg`"
         class="thumb"
       />
       <textarea
@@ -103,8 +83,8 @@ export default {
 
     <LightBox
       :images="images"
-      :image="lightbox"
-      @close="lightbox = null"
+      :img-name="imgName"
+      @close="imgName = ''"
     />
   </section>
 </template>
