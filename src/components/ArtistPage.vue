@@ -7,7 +7,7 @@
 
       <img
         alt="HMC example sculpture"
-        src="/img/art-column.jpg"
+        src="/img/waste-dress.jpg"
         class="art-column"
       />
 
@@ -59,7 +59,7 @@ div:last-child {
   float: right;
   margin-left: 20px;
   margin-bottom: 20px;
-  max-width: 50%;
+  max-width: 23%;
 }
 
 p {

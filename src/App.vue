@@ -21,6 +21,12 @@ export default {
       mode: 0,
     };
   },
+  computed: {
+    shouldEnableTransition() {
+      // Return true if the current route is not one of the routes where the transition should be disabled
+      return this.$route.path !== "/photo/:imgName";
+    },
+  },
   methods: {},
 };
 </script>
@@ -30,10 +36,12 @@ export default {
     <the-navigation />
 
     <router-view v-slot="{ Component }">
-      <transition-group name="fade" appear enter-active-class="fade-enter-active" leave-active-class="fade-leave-active">
-        <component :is="Component" :key="$route.fullPath" />
-      </transition-group>
-    </router-view>
+  <transition-group v-if="shouldEnableTransition" name="fade" appear enter-active-class="fade-enter-active" leave-active-class="fade-leave-active">
+    <component :is="Component" :key="$route.fullPath" />
+  </transition-group>
+  <component v-else :is="Component" :key="$route.fullPath" />
+</router-view>
+
 
   </main>
 

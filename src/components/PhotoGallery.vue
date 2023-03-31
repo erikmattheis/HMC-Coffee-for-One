@@ -24,7 +24,6 @@ export default {
     infiniteScroll,
   },
   async mounted() {
-    console.log('imgName', this.imgName)
     const response = await this.getImages();
     this.images = response.data.map(this.addGalleryPath);
     this.mousearea = Array(this.images.length).fill(false);
