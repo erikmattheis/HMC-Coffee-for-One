@@ -75,7 +75,14 @@ main {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  max-width: 1100px;
+  max-width: 1100px
+}
+
+@media (max-width: 480px) {
+  main {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+  }
 }
 
 body {

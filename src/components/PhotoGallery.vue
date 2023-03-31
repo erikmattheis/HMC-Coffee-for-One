@@ -97,11 +97,22 @@ section {
 }
 
 .card {
-  width: 180px;
+  width: 30%;
+  /* Set the width to 30% of the parent element */
+  max-width: 180px;
+  /* Set the maximum width to 180px */
   height: 240px;
   margin: 10px;
   display: inline-block;
   position: relative;
+}
+
+@media (max-width: 767px) {
+
+  /* On screens smaller than 768px, set the width to 100% */
+  .card {
+    width: 100%;
+  }
 }
 
 .thumb {
