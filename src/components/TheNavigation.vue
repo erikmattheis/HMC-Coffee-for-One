@@ -40,6 +40,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
 }
 
 .nav-link {
@@ -54,6 +55,7 @@ export default {
   padding: 1em 2em;
   background-color: #441111;
   transition: all 0.2s ease;
+  max-width: 100%;
 }
 
 .nav-box:hover {
@@ -106,22 +108,25 @@ export default {
   color: #f5f5f5;
 }
 
+h1 {
+  font-size: 3em;
+}
 
 .right-box h2 {
   margin: 0;
   padding: 0;
   text-align: left;
-}
-
-.right-box h2 {
-  font-size: 2em;
-}
-
-.right-box h2 {
   font-size: 1.5em;
 }
 
-h1 {
-  font-size: 3em;
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .right-box h2 {
+    font-size: 1em;
+  }
 }
 </style>

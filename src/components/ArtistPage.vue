@@ -44,7 +44,7 @@
 
 <style scoped>
 section {
-  margin: 0 1rem 120px;
+  margin: 0 auto 120px;
 }
 
 h3 {

@@ -50,14 +50,12 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Poppins:700&display=swap");
 
 :root {
   font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -69,6 +67,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100%;
 }
 
 main {
@@ -104,13 +103,15 @@ p {
   box-sizing: inherit;
   padding: 0;
   margin: 0;
-
 }
 
 body,
 html {
+  margin: 0;
+  padding: 0;
   color: #441111;
   background-color: #f5f5f5;
+  max-width: 100%;
 }
 
 .page-title {

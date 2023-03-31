@@ -19,7 +19,8 @@
 
       <div class="iframe-wrapper">
       <iframe class="motion" src="https://www.youtube.com/embed/n3PO430XDiQ?frameborder=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
-    </div>
+      </div>
+
       <p>Returning home to a cold empty apartment, I made my morning coffee and suddenly felt very, very alone. I snapped my mug and sent it to my friend to at least share a cup and an Hello. Thus was born...Coffee for One.</p>
 
       <p>I continued this morning ritual through returning to work and the following months until May 14, 2021 when the mask mandate was removed in Minnesota.</p>
@@ -35,14 +36,14 @@
           <img
             alt="Clean Water Fund Logo"
             src="/img/clean-water-logo.png"
-            style="height: 180"
+            style="height: 120px"
           />
         </li>
         <li>
           <img
             alt="Minnesota State Arts Board Logo"
             src="/img/msab-logo.png"
-            style="height: 180"
+            style="height: 120px"
           />
         </li>
       </ul>
@@ -57,27 +58,19 @@
 </template>
 
 <style scoped>
-section {
-  margin: 0 1rem;
-}
-
 .coffee {
   float: right;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  max-width: 37%;
+  margin: 0 0 20px 20px;
+  max-width: 50%;
 }
 
 .motion {
   float: left;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 0;
-  max-width: 37%;
+  margin: 0 20px 0 0;
+  max-width: 50%;
 }
 
-.video-wrapper {
+.iframe-wrapper {
   position: relative;
   padding-bottom: 56.25%;
   /* aspect ration for 16:9 */
@@ -85,7 +78,7 @@ section {
   overflow: hidden;
 }
 
-.video-wrapper iframe {
+.iframe-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
