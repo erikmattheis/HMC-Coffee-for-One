@@ -86,10 +86,6 @@
   height: 100%;
 }
 
-p {
-  text-align: justify;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
