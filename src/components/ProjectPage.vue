@@ -57,6 +57,10 @@
 </template>
 
 <style scoped>
+section {
+  margin: 0 1rem;
+}
+
 .coffee {
   float: right;
   margin-left: 20px;
