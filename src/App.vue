@@ -77,6 +77,10 @@ main {
   max-width: 1100px
 }
 
+p {
+  text-align: left;
+}
+
 @media (max-width: 480px) {
   main {
     max-width: 100%;

@@ -63,9 +63,7 @@ div:last-child {
   max-width: 400px;
 }
 
-p {
-  text-align: left;
-}
+
 
 ul li {
   display: inline-block;
