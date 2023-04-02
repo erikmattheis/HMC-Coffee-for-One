@@ -37,9 +37,9 @@ export default {
 
     <router-view v-slot="{ Component }">
   <transition-group v-if="shouldEnableTransition" name="fade" appear enter-active-class="fade-enter-active" leave-active-class="fade-leave-active">
-    <component :is="Component" :key="$route.fullPath" />
+    <component :is="Component" :key="$route.fullPath" class="blue" />
   </transition-group>
-  <component v-else :is="Component" :key="$route.fullPath" />
+  <component v-else :is="Component" :key="$route.fullPath" class="red"/>
 </router-view>
 
 
@@ -140,19 +140,23 @@ section {
 }
 
 .fade-enter {
+
   opacity: 0;
 }
 
 .fade-enter-active {
+
   transition: opacity 0.2s ease-in-out;
   opacity: 1;
 }
 
 .fade-leave {
+
   opacity: 1;
 }
 
 .fade-leave-active {
+
   transition: opacity 0.2s ease-in-out;
   opacity: 0;
 }
