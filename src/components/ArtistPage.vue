@@ -59,7 +59,12 @@ div:last-child {
   float: right;
   margin-left: 20px;
   margin-bottom: 20px;
-  max-width: 23%;
+  width: 23%;
+  max-width: 400px;
+}
+
+p {
+  text-align: left;
 }
 
 ul li {

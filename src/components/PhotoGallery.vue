@@ -1,159 +1,103 @@
-<script>
-import axios from "axios";
-import infiniteScroll from "vue-infinite-scroll";
-
-import LightBox from "./LightBox.vue";
-
-export default {
-  name: "PhotoGallery",
-  components: {
-    LightBox,
-  },
-  data() {
-    return {
-      mode: 0,
-      imgName: this.$route.params.imgName,
-      images: [],
-      imagesToShow: [],
-      currentImageCount: 0,
-      imagesPerPage: 20,
-      mousearea: [],
-    };
-  },
-  directives: {
-    infiniteScroll,
-  },
-  async mounted() {
-    const response = await this.getImages();
-    this.images = response.data.map(this.addGalleryPath);
-    this.mousearea = Array(this.images.length).fill(false);
-  },
-  methods: {
-    closeLightbox() {
-      this.$router.push({ name: "photoGallery" });
-    },
-    async getImages() {
-      const response = await axios.get("/gallery/gallery.json");
-      return response;
-    },
-    addGalleryPath(image) {
-      return { ...image, title: image.name, description: image.name + " caption", name: image.name.split('.')[0] };
-    },
-    async updateImage(image) {
-      const data = {
-        name: image.name,
-        title: image.title,
-        description: image.description,
-      };
-      const response = await axios.post("http://localhost:3000/edit", image);
-    },
-    loadMoreImages() {
-      const end = this.currentImageCount + this.imagesPerPage;
-      this.imagesToShow = this.images.slice(this.currentImageCount, end);
-      this.currentImageCount = end;
-    },
-  },
-};
-</script>
-
 <template>
-  <section>
-    <div
-      class="card"
-      v-for="(image, index) in images"
-      :key="image.name"
-      @click="$router.push({ name: 'onePhoto', params: { imgName: image.name.split('.')[0] } })"
-      v-infinite-scroll="loadMoreImages"
-    >
-      <input
-        v-if="mode === 1"
-        type="text"
-        v-model="image.title"
-        @blur="updateImage(image)"
-      />
+  <div>
+    <section>
+      <h2 class="page-title">About the Project</h2>
+
+      <p>March 2020, as many of us experienced stay-at-home orders being imposed in the US, I was visiting my parents out of town.</p>
+
       <img
-        :alt="image.title"
-        :src="`/gallery/thumbs/${image.name}.jpg`"
-        class="thumb"
+        src="/img/coffee.png"
+        alt="Latte"
+        class="coffee"
       />
-      <textarea
-        v-if="mode === 1"
-        v-model="image.description"
-        @blur="updateImage(image)"
-      />
-    </div>
-    imgName: {{ imgName }}
-    <LightBox
-      :images="images"
-      :img-name="imgName"
-      @close="closeLightbox()"
-    />
-  </section>
+
+      <p>As the pandemic unfolded before our eyes on national, international and local news, it was truly a comfort to be isolated with my family and not stuck home completely alone.</p>
+
+      <p>As months progressed, I started working remotely but that was short-lived as my company put us all on furlough...nice to get the extra unemployment and an extension of medical coverage but still so many unknown unknowns.</p>
+
+      <p>Then, a limited call back. Working for a retail store considered essential industry selling beds and office furniture, a small group of employees were asked to return to work. I did.</p>
+
+      <div class="iframe-wrapper">
+      <iframe class="motion" src="https://www.youtube.com/embed/n3PO430XDiQ?frameborder=0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+      </div>
+
+      <p>Returning home to a cold empty apartment, I made my morning coffee and suddenly felt very, very alone. I snapped my mug and sent it to my friend to at least share a cup and an Hello. Thus was born...Coffee for One.</p>
+
+      <p>I continued this morning ritual through returning to work and the following months until May 14, 2021 when the mask mandate was removed in Minnesota.</p>
+
+      <p>These photos are my daily snaps and a few of the messages received back.</p>
+
+      <p>Once I could join my friends and family again for coffee, I captured some of those photos as well.</p>
+    </section>
+  
+    <section>
+      <ul>
+        <li>
+          <img
+            alt="Clean Water Fund Logo"
+            src="/img/clean-water-logo.png"
+            style="height: 120px"
+          />
+        </li>
+        <li>
+          <img
+            alt="Minnesota State Arts Board Logo"
+            src="/img/msab-logo.png"
+            style="height: 120px"
+          />
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      
+    <p>Heather M. Cole is a fiscal year 2022 recipient of a Creative Support for Individuals grant from the Minnesota State Arts Board. This activity is made possible by the voters of Minnesota through a grant from the Minnesota State Arts Board, thanks to a legislative appropriation from the arts and cultural heritage fund.</p>
+
+    </section>
+  </div>
 </template>
 
 <style scoped>
-section {
-  margin: 120px auto;
+.coffee {
+  float: right;
+  margin: 0 0 20px 20px;
+  max-width: 50%;
 }
 
-.card {
-  width: 30%;
-  /* Set the width to 30% of the parent element */
-  max-width: 180px;
-  /* Set the maximum width to 180px */
-  height: 240px;
-  margin: 10px;
-  display: inline-block;
+.motion {
+  float: left;
+  margin: 0 20px 0 0;
+  max-width: 50%;
+}
+
+.iframe-wrapper {
   position: relative;
+  padding-bottom: 56.25%;
+  /* aspect ration for 16:9 */
+  height: 0;
+  overflow: hidden;
 }
 
-@media (max-width: 767px) {
-
-  /* On screens smaller than 768px, set the width to 100% */
-  .card {
-    width: 100%;
-  }
-}
-
-.thumb {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.thumb:hover {
-  cursor: pointer;
-}
-
-.card .overlay {
+.iframe-wrapper iframe {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  text-align: left;
+}
+
+nav {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  padding: 10px 5px 5px;
-  box-sizing: border-box;
+  align-items: center;
 }
 
-.card .overlay.visible {
-  opacity: 1;
-}
-
-.card .overlay .title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-.card .overlay .caption {
-  font-size: 14px;
-  padding: 5px;
+ul li {
+  display: inline-block;
+  margin: 0 20px;
 }
 </style>
