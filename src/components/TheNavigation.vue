@@ -22,20 +22,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Navigation',
-  data() {
-    return {
-      linkText: 'Home',
-      topText: 'Top',
-      bottomText: 'Bottom',
-    };
-  },
-};
-</script>
-
-<style>
+<style scoped>
 .wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -86,10 +73,11 @@ export default {
 
 .right-box {
   padding: 0.5em 1em;
-  height: 50%;
   background-color: #f5f5f5;
   text-transform: uppercase;
   transition: background-color 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .right-link {
@@ -119,8 +107,25 @@ h1 {
   font-size: 1.5em;
 }
 
-
 @media (max-width: 480px) {
+  .right-box-wrapper {
+    width: 100%;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+
+  .nav-box {
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .right-box {
+    height: auto;
+    width: 100%;
+    padding: 1em 1em;
+  }
+
   h1 {
     font-size: 2em;
   }
