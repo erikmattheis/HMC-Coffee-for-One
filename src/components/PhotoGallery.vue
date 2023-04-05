@@ -105,7 +105,7 @@ export default {
 
 <style scoped>
 section {
-  margin: 120px auto;
+  margin: 0 auto 120px auto;
 }
 
 .card {
@@ -128,8 +128,8 @@ section {
   }
 
   .thumb {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 

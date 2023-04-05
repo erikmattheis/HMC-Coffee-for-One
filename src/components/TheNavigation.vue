@@ -28,6 +28,7 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
+  margin-bottom: 10px;
 }
 
 .nav-link {

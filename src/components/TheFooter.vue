@@ -10,7 +10,7 @@
       <li><a href="https://www.designHMC.com">www.designHMC.com</a></li>
       <li>/</li>
       <li>
-        <a href="https://www.facebook.com/designhmc"><vue-feather type="facebook" /><span class="sr">Facebook</span></a>
+        <a href="https://www.facebook.com/profile.php?id=100091115514165"><vue-feather type="facebook" /><span class="sr">Facebook</span></a>
       </li>
       <li>/</li>
       <li>
