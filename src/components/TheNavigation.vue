@@ -26,9 +26,15 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   max-width: 100%;
   margin-bottom: 10px;
+}
+
+.nav-box-wrapper,
+.right-box-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
